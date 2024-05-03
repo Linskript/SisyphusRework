@@ -1,0 +1,7 @@
+{
+  "name": "SisyphusReworks",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
