@@ -1,0 +1,41 @@
+<ion-header [translucent]="true" style="border-bottom: 3px solid rgb(119, 81, 0);">
+  <ion-toolbar style=" --background:#daa520;">
+    <ion-title style="font-size: xx-large;  font-family: 'Odibee Sans', sans-serif; margin-left: 44%;">Sisyphus Sort</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style=" --background: #ffd579;">
+  <div id="img">
+  <img style="width: 100%; height: 100%;" src="../../../assets/imgs/sapiens (2).png">
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div id="phone">
+    <div id="align">
+      <ion-label style="color:rgb(119, 81, 0);; font-family: 'Odibee Sans', sans-serif; font-size: 35px;">Entrar</ion-label>
+    <ion-item>
+      <ion-label position="floating">Email do Usuário</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha do Usuário</ion-label>
+      <ion-input
+        formControlName="password"
+        [type]="showPassword ? 'text' : 'password'"
+      ></ion-input>
+      <ion-icon
+        slot="end"
+        [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+        (click)="togglePassword()"
+      ></ion-icon>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" style="width: 150px; height: 50px; --ion-color-primary: #daa520;" shape="round">Entrar</ion-button>
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: row;">
+    <ion-label style="color: black; font-family: 'Odibee Sans', sans-serif; font-size: 15px;">Não tem uma conta ?</ion-label>
+    <p [routerLink]="'/cadastro'" style="color: rgb(25, 0, 255); font-family: 'Odibee Sans', sans-serif; font-size: 15px;">Registre-se</p>
+  </div>
+  </div>
+</div>
+  </form>
+</ion-content>

@@ -1,0 +1,102 @@
+
+*{
+color: white;
+text-align: center;
+font-family: "Prompt", sans-serif;
+--ion-item-border-width: 0; /* Remove a borda */
+--ion-item-border-color: transparent; /* Torna a borda transparente */
+--ion-color-primary: rgb(119, 81, 0);
+--ion-color-danger: rgb(119, 81, 0);
+}
+
+
+// src/app/painel/painel.page.scss
+.scroll-container {
+    overflow-x: auto; /* Permite rolar horizontalmente */
+    white-space: nowrap; /* Garante que os itens não quebrem linha */
+    height: 100%;
+  }
+  
+  .calendar-row {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .calendar-col {
+    display: inline-block;
+    min-width: 250px; /* Define a largura mínima para cada coluna */
+    margin-right: 8px; /* Espaçamento entre as colunas, ajuste conforme necessário */
+  }
+  
+  #scrlabel {
+    max-height: 200px; /* Altura máxima para scroll vertical */
+    max-width: 200px; /* Largura máxima para scroll horizontal */
+    overflow: auto; /* Adiciona rolagem se o conteúdo exceder o tamanho */
+    display: block; /* Garante que o elemento seja tratado como bloco */
+    white-space: normal; /* Permite quebra de linha se o texto for muito longo */
+    text-overflow: clip; /* Remove a configuração de truncamento de texto com reticências */
+    word-wrap: break-word; /* Garante que palavras longas sejam quebradas para se ajustar */
+    font-size: small;
+    font-family: "Prompt", sans-serif;
+  }
+  
+  .interval-content {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: flex-start; /* Alinha os itens ao início do contêiner */
+    padding: 8px; /* Adiciona um pouco de espaçamento interno */
+  }
+  
+  .changefont {
+    font-family: "Odibee Sans", sans-serif;
+  }
+
+  #intdesc {
+    width: 100%; /* Garante que a descrição ocupe toda a largura disponível */
+    max-width: 100px;
+    max-height: 100px; /* Define uma altura máxima para a área de texto */
+    overflow-y: auto; /* Adiciona rolagem vertical se o texto exceder a altura máxima */
+    white-space: normal; /* Permite quebra de linha se o texto for muito longo */
+    word-wrap: break-word; /* Garante que palavras longas sejam quebradas para se ajustar */
+    font-size: small;
+    color: white;
+    text-align: center;
+  }
+  
+  .delete-button {
+    margin-top: 8px; /* Adiciona um espaço acima do botão de exclusão */
+  }
+  
+  .yellow-background {
+    --background: #ffd579;
+    --ion-text-color: rgb(255, 255, 255); /* Cor do texto */
+    --ion-card-background: #c29b1a; /* Define a cor cinza-escura para todos os cards */
+    --ion-card-text-color: #ffffff; /* Cor do texto dentro dos cards */
+  }
+  
+  .aba {
+    --background:#977213;
+    text-align: left;
+    outline: white 3px solid;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  /* Estilos para a barra de rolagem */
+.scroll-container::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+  }
+  
+  .scroll-container::-webkit-scrollbar-track {
+    background: #ffd579; /* Cor do fundo da trilha */
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background:#a17e0b;/* Cor da parte deslizante */
+    border-radius: 5px; /* Arredondamento dos cantos */
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb:hover {
+    background:#a17e0b; /* Cor da parte deslizante ao passar o mouse */
+  }
+  

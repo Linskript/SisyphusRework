@@ -1,0 +1,47 @@
+* {
+    color: rgb(119, 81, 0);
+}
+
+#phone {
+ background-color: #daa520;
+ width: 300px;
+ height: 550px;   
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ margin-left: 70%;
+ border-radius: 30px;
+ margin-top: 30px;
+}
+
+#align{
+    background-color: rgb(255, 255, 255);
+ width: 280px;
+ height: 480px;   
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ outline: solid 3px rgb(119, 81, 0);
+}
+
+ion-item {
+    margin: 10px 0;
+
+    width: 75%;
+    outline: solid 3px rgb(119, 81, 0);
+    border-radius: 30px;
+    --background:#daa520;
+    --ion-text-color: #000000; 
+    --ion-item-border-width: 0; /* Remove a borda */
+--ion-item-border-color: transparent; /* Torna a borda transparente */
+  }
+
+  #img {
+    width: 600px;
+    height: 550px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 170px;
+  }

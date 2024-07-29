@@ -1,0 +1,64 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar class="aba">
+    <ion-title style="font-size: xx-large;  font-family: 'Odibee Sans', sans-serif; margin-left: 200px;">Sisyphus Sort</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openEventModal()">Adicionar Evento</ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onLogout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="yellow-background">
+  <div class="scroll-container">
+    <div class="calendar-row">
+      <div *ngFor="let day of daysOfWeek" class="calendar-col">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="text-align: center; font-size: x-large; border-bottom: solid 2px rgb(255, 255, 255); height: 45px;">{{ day }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div *ngFor="let event of events[day]" style="border-top: 15px; border-bottom: 15px; --ion-card-background: #977213;">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title  style="font-size: small;">{{ event.title }}</ion-card-title>
+                  <ion-card-subtitle>{{ event.hour }}:{{ event.minute | number: '2.0' }}</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content style="background-color: #daa520;">
+                  <ion-item style="--ion-item-background: #daa520; text-align: center;">
+                    <ion-label id="scrlabel">{{ event.description }}</ion-label>
+                  </ion-item>
+
+                  <ion-item style="margin-left: 20px;  --ion-item-background: #daa520;">
+                    <ion-button (click)="createInterval(event.id)"><ion-icon name="add-outline"></ion-icon></ion-button>
+                    <ion-button (click)="deleteEvent(event.id)" color="danger"><ion-icon name="trash-outline" ></ion-icon></ion-button>
+                  </ion-item>
+                  
+                  <!-- Lista de intervalos associados ao evento -->
+                  <ion-list lines="none" *ngIf="event.intervals && event.intervals.length" style="background-color:  #daa520; border-top: solid 3px white;">
+                    <ion-item lines="none" *ngFor="let interval of event.intervals" style="--ion-item-background: #daa520;">
+                      <div class="interval-content">
+                        <ion-label style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                          <p style="color: white; text-align: center;">{{ interval.name }}</p>
+                          <p id="intdesc">{{ interval.description }}</p>
+                        </ion-label>
+                        <ion-label style="display: flex; align-items: center; justify-content: center;">
+                        <ion-button style=" margin-left: 25px;" slot="start" shape="round" color="danger" (click)="deleteInterval(interval.id)" class="delete-button">
+                          <ion-icon name="trash-outline"></ion-icon>
+                        </ion-button>
+                      </ion-label>
+                      </div>
+                    </ion-item>
+                    
+                  </ion-list>
+                </ion-card-content>
+              </ion-card>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

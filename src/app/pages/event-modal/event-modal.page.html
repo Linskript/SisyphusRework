@@ -1,0 +1,47 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar style="background-color: #977213; --background: #977213;">
+    <ion-title>Adicionar Evento</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="background-color: #c29b1a; --background:#c29b1a;">
+  <form [formGroup]="eventForm" (ngSubmit)="submit()" style="background-color: #c29b1a; --background:#c29b1a;">
+    <ion-item>
+      <ion-label position="floating">Dia</ion-label>
+      <ion-select formControlName="day" >
+        <ion-select-option style="background-color: #0000ff; --background:#0000ff;" value="Segunda-feira">Segunda-feira</ion-select-option>
+        <ion-select-option value="Terça-feira">Terça-feira</ion-select-option>
+        <ion-select-option value="Quarta-feira">Quarta-feira</ion-select-option>
+        <ion-select-option value="Quinta-feira">Quinta-feira</ion-select-option>
+        <ion-select-option value="Sexta-feira">Sexta-feira</ion-select-option>
+        <ion-select-option value="Sábado">Sábado</ion-select-option>
+        <ion-select-option value="Domingo">Domingo</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-label style="margin-left: 90px;">Hora e minuto</ion-label>
+    <div style="display: flex; justify-content: start; align-items: center; flex-direction: row;">
+    <ion-item class="tempo">
+      <ion-input formControlName="hour" type="text" maxlength="2" pattern="[0-9]*"></ion-input>
+    </ion-item>
+    <ion-item class="tempo">
+      <ion-input formControlName="minute" type="text" maxlength="2" pattern="[0-9]*"></ion-input>
+    </ion-item>
+  </div>
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input formControlName="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="eventForm.invalid" style="width: 150px; height: 50px; margin-left: 37%; --ion-color-primary: rgb(119, 81, 0);">Cadastrar</ion-button>
+  </form>
+</ion-content>

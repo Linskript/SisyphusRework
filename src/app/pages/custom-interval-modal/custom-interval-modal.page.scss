@@ -1,0 +1,16 @@
+* {
+    color: white;
+    font-family: "Prompt", sans-serif;
+}
+.item{
+    width: 75%;
+    outline: solid 3px white;
+    border-radius: 30px;
+    margin-top: 30px;
+    margin-left: 80px;
+    margin-bottom: 30px;
+    --background: #977213;
+    --ion-text-color: #000000; 
+    --ion-item-border-width: 0; /* Remove a borda */
+--ion-item-border-color: transparent; /* Torna a borda transparente */
+}

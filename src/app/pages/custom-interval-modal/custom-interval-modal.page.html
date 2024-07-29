@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar style="background-color: #977213; --background: #977213;">
+    <ion-title style="margin-left: 220px;">Criar Intervalo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Fechar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #c29b1a; --background:#c29b1a;">
+  <ion-list style="background-color:#c29b1a;">
+    <ion-item class="item">
+      <ion-label position="stacked">Nome do Intervalo</ion-label>
+      <ion-input [(ngModel)]="intervalName" placeholder="Nome do intervalo"></ion-input>
+    </ion-item>
+    <ion-item class="item">
+      <ion-label position="stacked">Descrição</ion-label>
+      <ion-textarea [(ngModel)]="intervalDescription" placeholder="Descrição do intervalo"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveInterval()" style="width: 150px; height: 50px; margin-left: 37%; --ion-color-primary: rgb(119, 81, 0);">Salvar</ion-button>
+</ion-content>
